@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_dark">#0D0D0D</color>
+    <color name="surface_dark">#1A1A1A</color>
+    <color name="text_primary">#F0F0F0</color>
+    <color name="text_secondary">#666666</color>
+    <color name="accent_green">#00FF88</color>
+    <color name="status_paused">#FFBB00</color>
+    <color name="freefall_color">#FF8C00</color>
+    <color name="impact_color">#FF2222</color>
+    <color name="axis_x">#FF4444</color>
+    <color name="axis_y">#44FF44</color>
+    <color name="axis_z">#4488FF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <!-- FŐ TARTALOM - Középre igazított elemek a dobáshoz -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigation"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ÉRMEDOBÁS"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="48dp" />
+
+        <!-- ÉRME MEGJELENÍTÉSE - Itt látható a fej/írás eredménye és a forgatás animációja -->
+        <TextView
+            android:id="@+id/coinResult"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/dot_active"
+            android:gravity="center"
+            android:text="?"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp" />
+
+        <!-- DOBÁS INDÍTÁSA - Erre kattintva indul el a véletlenszerű sorsolás -->
+        <Button
+            android:id="@+id/flipButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DOBÁS"
+            android:backgroundTint="@color/accent_green"
+            android:textColor="@color/black"
+            android:layout_marginBottom="48dp" />
+
+        <!-- STATISZTIKA PANEL - Korábbi dobások eredményeinek összesítése -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/surface_dark"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STATISZTIKA"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:letterSpacing="0.1"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Számszerű eredmények (Fej/Írás db) -->
+            <TextView
+                android:id="@+id/statsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fej: 0 | Írás: 0"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:fontFamily="monospace" />
+
+            <!-- Százalékos arány kijelzése -->
+            <TextView
+                android:id="@+id/ratioText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arány: 0%"
+                android:textColor="@color/accent_green"
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:layout_marginTop="4dp" />
+
+            <!-- Reset gomb - Statisztika lenullázása -->
+            <Button
+                android:id="@+id/resetStatsButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STATISZTIKA TÖRLÉSE"
+                android:textColor="@color/impact_color"
+                android:textSize="10sp"
+                android:layout_gravity="end" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ALSÓ NAVIGÁCIÓ - Visszatérés a Detektor főoldalra -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/surface_dark"
+        app:itemIconTint="@color/accent_green"
+        app:itemTextColor="@color/text_primary"
+        app:menu="@menu/nav_menu" />
+
+</RelativeLayout>
